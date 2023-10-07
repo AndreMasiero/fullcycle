@@ -1,1 +1,0 @@
-docker pull andremasiero/fullcycle_desafio_golang
