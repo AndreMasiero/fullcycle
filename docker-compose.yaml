@@ -12,9 +12,10 @@ services:
       - ./node:/usr/src/app
     tty: true
     ports:
-      - "3000:3000"
+      - "8080:3000"
     depends_on:
       - db
+    command: /bin/sh -c "npm install && node index.js"
 
   db:
     image: mysql:5.7
@@ -31,7 +32,6 @@ services:
       - MYSQL_USER=test
     networks:
       - node-network
-
 
 networks:
   node-network:
