@@ -17,11 +17,12 @@ const names = [
     "Patricia", "Quinn", "Rachel", "Steve", "Tina"
 ];
 
-const randomName = names[Math.floor(Math.random() * names.length)];
-const randomNumber = Math.floor(Math.random() * 101);
-const sqlInsert = `INSERT INTO people(username, cod) VALUES ('${randomName}', ${randomNumber})`;
-
 app.get('/', (req, res) => {
+
+    const randomName = names[Math.floor(Math.random() * names.length)];
+    const randomNumber = Math.floor(Math.random() * 101);
+    const sqlInsert = `INSERT INTO people(username, cod) VALUES ('${randomName}', ${randomNumber})`;
+
     connection.query(sqlInsert, (err, results) => {
         if (err) {
             console.error(err);
